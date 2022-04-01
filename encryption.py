@@ -1,20 +1,21 @@
 import string
-az= string.ascii_lowercase
+az= string.ascii_uppercase
 list1 = []
+list1.append(" ")
 for i in az:
     list1.append(i)
-kk=[]
-phrase=input("Enter : \n")
-v=phrase.lower()
-empty=list(v)
-for element in empty:
+phrase_list=[]
+phrase=input("Enter phrase : \n")
+change_upper=phrase.upper()
+entered_phrase=list(change_upper)
+for element in entered_phrase:
         if element in list1:
-            kk.append(element)
-pop = [list1.index(i) for i in kk]
+            phrase_list.append(element)
+Locate=[list1.index(i) for i in phrase_list]
 
 change=[]
-for i in range(len(pop)):
-    change.append((pop[i]+3)%26)
+for i in range(len(Locate)):
+    change.append((Locate[i]+4)%27)
 final=[]
 for i in range(len(change)):
     final.append(list1[change[i]])
